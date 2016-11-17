@@ -95,13 +95,11 @@ namespace LojaApp
         private void btnVender_Click(object sender, RoutedEventArgs e)
         {
             Loja db = new Loja();
-            string[] z = listVeicDispo.SelectedItem.ToString().Split(' ');
-            foreach (Veiculo veic in db.Veiculos)
-                if (int.Parse(z[0]) == veic.Id)
-                {
-                    veic.Vendido = true;
-                    db.SaveChanges();
-                }
+            Veiculo v = (Veiculo)listVeicDispo.SelectedItem;
+            v.Vendido = true;
+            db.Veiculos.Update(v);
+            db.SaveChanges();
+
             ListarDisponivel();
             ListarVendido();
         }
@@ -134,8 +132,8 @@ namespace LojaApp
         private void ListarTodos()
         {
             Loja db = new Loja();
-            if (listVeic.Items.Count != 0)
-                listVeic.Items.Clear();
+            if (listVeic.Items.Count > 0)
+                listVeicDispo.ItemsSource = null;
             listVeic.ItemsSource = db.Veiculos.ToList();
         }
 
