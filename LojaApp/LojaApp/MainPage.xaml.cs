@@ -33,8 +33,8 @@ namespace LojaApp
             PopularCB();
         }
 
-        private string ip = "http://192.168.0.23/"; 
-        //private string ip = "http://localhost:50915";
+        //private string ip = "http://192.168.0.23"; 
+        private string ip = "http://localhost:51168";
 
         private void PopularCB()
         {
@@ -221,19 +221,16 @@ namespace LojaApp
             db.Fabricantes.RemoveRange(db.Fabricantes.ToArray());
             db.SaveChanges();
 
-            // Grava a lista de fabricates que veio do serviço
-            // no banco local
+            // Grava a lista de fabricates que veio do serviço no banco local
             db.Fabricantes.AddRange(obj);
             db.SaveChanges();
 
             // Mostra a lista no listview
-            listFab.ItemsSource = null;
-            listFab.ItemsSource = db.Fabricantes.ToList();
+            ListarFabs();
         }
         private async void AtualizarVei()
         {
-            // Acessa os dados do serviço para recuperar a lista
-            // de veiculos
+            // Acessa os dados do serviço para recuperar a lista de veiculos
             HttpClient httpClient = new HttpClient();
             httpClient.BaseAddress = new Uri(ip);
             var response = await httpClient.GetAsync("/api/veiculo/");
@@ -247,14 +244,12 @@ namespace LojaApp
             db.Veiculos.RemoveRange(db.Veiculos.ToArray());
             db.SaveChanges();
 
-            // Grava a lista de fabricates que veio do serviço
-            // no banco local
+            // Grava a lista de fabricates que veio do serviço no banco local
             db.Veiculos.AddRange(obj);
             db.SaveChanges();
 
             // Mostra a lista no listview
-            listVeic.ItemsSource = null;
-            listVeic.ItemsSource = db.Veiculos.ToList();
+            ListarTodos();
         }
 
         /* BOTÕES - ATUALIZAR SERVIÇO */
