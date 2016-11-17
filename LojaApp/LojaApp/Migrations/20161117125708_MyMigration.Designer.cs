@@ -8,8 +8,8 @@ using LojaApp.Models;
 namespace LojaApp.Migrations
 {
     [DbContext(typeof(Loja))]
-    [Migration("20161117010725_MyFirstMigration")]
-    partial class MyFirstMigration
+    [Migration("20161117125708_MyMigration")]
+    partial class MyMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

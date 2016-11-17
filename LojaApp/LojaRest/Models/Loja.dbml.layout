@@ -14,7 +14,7 @@
         <elementListCompartment Id="93aa6862-3551-4391-8ca6-7fdeb42f7dcd" absoluteBounds="0.51500000000000012, 2.335, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(2.5 : 2.47199625651042); (3.625 : 2.47199625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.5 : 2.47199625651042); (3.625 : 2.47199625651042)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/LojaDataContext/Fabricante/Fabricante_Veiculo" />
       <nodes>
         <classShapeMoniker Id="c22483cd-06bf-40dd-a74c-7a55e76e817a" />

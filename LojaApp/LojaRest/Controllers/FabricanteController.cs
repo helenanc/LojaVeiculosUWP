@@ -11,7 +11,7 @@ namespace LojaRest.Controllers
     public class FabricanteController : ApiController
     {
         // GET api/fabricante
-        internal IEnumerable<Models.Fabricante> Get()
+        public IEnumerable<Models.Fabricante> Get()
         {
             Models.LojaDataContext dc = new Models.LojaDataContext();
             var r = from f in dc.Fabricantes select f;

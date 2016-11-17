@@ -17,7 +17,14 @@ namespace LojaApp.Models
         public Fabricante Fabricante { get; set; }
         public override string ToString()
         {
-            return $"{Id} - {Fabricante} - {Modelo} - {Ano} - {Preco:0.00}";
+            return $"{Id} - {FabDesc()} - {Modelo} - {Ano} - {Preco:0.00}";
         }
+
+        private string FabDesc()
+        {
+            Loja db = new Loja();
+            return db.Fabricantes.ToList().Find(x => x.Id == IdFabricante).Descricao;            
+        }
+
     }
 }

@@ -33,7 +33,8 @@ namespace LojaApp
             PopularCB();
         }
 
-        private string ip = "http://192.168.0.23";
+        private string ip = "http://192.168.0.23/"; 
+        //private string ip = "http://localhost:50915";
 
         private void PopularCB()
         {
@@ -94,7 +95,7 @@ namespace LojaApp
         private void btnVender_Click(object sender, RoutedEventArgs e)
         {
             Loja db = new Loja();
-            string[] z = listVeicDispo.SelectedItems[0].ToString().Split(' ');
+            string[] z = listVeicDispo.SelectedItem.ToString().Split(' ');
             foreach (Veiculo veic in db.Veiculos)
                 if (int.Parse(z[0]) == veic.Id)
                 {

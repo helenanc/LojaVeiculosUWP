@@ -86,7 +86,7 @@ namespace LojaRest.Models
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Veiculo")]
-	internal partial class Veiculo : INotifyPropertyChanging, INotifyPropertyChanged
+	public partial class Veiculo : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
@@ -309,7 +309,7 @@ namespace LojaRest.Models
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Fabricante")]
-	internal partial class Fabricante : INotifyPropertyChanging, INotifyPropertyChanged
+	public partial class Fabricante : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);

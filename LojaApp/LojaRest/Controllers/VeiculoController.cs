@@ -11,7 +11,7 @@ namespace LojaRest.Controllers
     public class VeiculoController : ApiController
     {
         // GET api/veiculo
-        internal IEnumerable<Models.Veiculo> Get()
+        public IEnumerable<Models.Veiculo> Get()
         {
             Models.LojaDataContext dc = new Models.LojaDataContext();
             var r = from f in dc.Veiculos select f;

@@ -13,7 +13,7 @@ namespace LojaApp.Models
         public DbSet<Veiculo> Veiculos { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlite("Filename=Loja.db");
+            optionsBuilder.UseSqlite("Filename=Loja2.db");
         }
     }
 }
