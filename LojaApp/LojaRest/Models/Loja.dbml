@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="LojaCarroRestDB" Class="LojaDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=DESKTOP-E4LUID3\HELENA;Initial Catalog=LojaCarroRestDB;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="LojaCarroRestDBConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Veiculo" Member="Veiculos" AccessModifier="Internal">
+    <Type Name="Veiculo" AccessModifier="Internal">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Modelo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Ano" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Preco" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Vendido" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IdFabricante" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Fabricante_Veiculo" Member="Fabricante" ThisKey="IdFabricante" OtherKey="Id" Type="Fabricante" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Fabricante" Member="Fabricantes" AccessModifier="Internal">
+    <Type Name="Fabricante" AccessModifier="Internal">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Descricao" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="Fabricante_Veiculo" Member="Veiculos" ThisKey="Id" OtherKey="IdFabricante" Type="Veiculo" />
+    </Type>
+  </Table>
+</Database>
