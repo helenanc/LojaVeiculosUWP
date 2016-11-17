@@ -1,0 +1,62 @@
+﻿<Page
+    x:Class="LojaApp.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:LojaApp"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Pivot Title="Loja de Veículos">
+            <PivotItem Header="Fabricantes" Margin="14,0,10,0">
+                <Grid>
+                    <TextBox x:Name="textFabId" HorizontalAlignment="Left" Margin="53,10,0,0" TextWrapping="Wrap" Text="Id" VerticalAlignment="Top"/>
+                    <TextBox x:Name="textFabDesc" HorizontalAlignment="Left" Margin="129,10,0,0" TextWrapping="Wrap" Text="Descrição" VerticalAlignment="Top"/>
+                    <Button x:Name="btnFabInsert" Content="Inserir" HorizontalAlignment="Left" Margin="225,10,0,0" VerticalAlignment="Top" Click="btnFabInsert_Click"/>
+                    <Button x:Name="btnFabListas" Content="Listar" HorizontalAlignment="Left" Margin="10,47,0,0" VerticalAlignment="Top" Width="316" Click="btnFabListas_Click"/>
+                    <ListView x:Name="listFab" HorizontalAlignment="Left" Height="451" Margin="10,84,0,0" VerticalAlignment="Top" Width="316"/>
+                </Grid>
+            </PivotItem>
+            <PivotItem Header="Veículos">
+                <Grid>
+                    <TextBox x:Name="textVeicId" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Id" VerticalAlignment="Top"/>
+                    <TextBox x:Name="textVeicModelo" HorizontalAlignment="Left" Margin="173,10,0,0" TextWrapping="Wrap" Text="Modelo" VerticalAlignment="Top"/>
+                    <TextBox x:Name="textVeicAno" HorizontalAlignment="Left" Margin="10,47,0,0" TextWrapping="Wrap" Text="Ano" VerticalAlignment="Top"/>
+                    <TextBox x:Name="textVeicPreco" HorizontalAlignment="Left" Margin="250,10,0,0" TextWrapping="Wrap" Text="Preço" VerticalAlignment="Top"/>
+                    <ComboBox x:Name="cbVeicFab" HorizontalAlignment="Left" Margin="79,10,0,0" VerticalAlignment="Top" Width="89">
+                    </ComboBox>
+                    <ComboBox x:Name="cbSitVenda" HorizontalAlignment="Left" Margin="79,47,0,0" VerticalAlignment="Top" Width="120">
+                        <ComboBoxItem x:Name="cbOpVendido" Content="Vendido" Tag="true"/>
+                        <ComboBoxItem x:Name="cbOpVenda" Content="À Venda" Tag="false"/>
+                    </ComboBox>
+                    <Button x:Name="btnVeicInsert" Content="Inserir" HorizontalAlignment="Left" Margin="253,47,0,0" VerticalAlignment="Top" Click="btnVeicInsert_Click"/>
+                    <Button x:Name="btnVeicListar" Content="Listar" HorizontalAlignment="Left" Margin="10,104,0,0" VerticalAlignment="Top" Width="316" Click="btnVeicListar_Click"/>
+                    <ListView x:Name="listVeic" HorizontalAlignment="Left" Height="350" Margin="10,141,0,0" VerticalAlignment="Top" Width="340">
+                    </ListView>
+                </Grid>
+            </PivotItem>
+            <PivotItem Header="Disponíveis">
+                <Grid>
+                    <Button x:Name="btnListarVeicDispo" Content="Listar" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="316" Click="btnListarVeicDispo_Click"/>
+                    <ListView x:Name="listVeicDispo" HorizontalAlignment="Left" Height="431" Margin="10,47,0,0" VerticalAlignment="Top" Width="316"/>
+                    <Button x:Name="btnVender" Content="Vender" HorizontalAlignment="Left" Margin="0,483,0,0" VerticalAlignment="Top" Width="326" Click="btnVender_Click"/>
+
+                </Grid>
+            </PivotItem>
+            <PivotItem Header="Vendidos">
+                <Grid>
+                    <Button x:Name="btnListarVeicVend" Content="Listar" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="316" Click="btnListarVeicVend_Click"/>
+                    <ListView x:Name="listVeicVend" HorizontalAlignment="Left" Height="488" Margin="10,47,0,0" VerticalAlignment="Top" Width="316"/>
+                </Grid>
+            </PivotItem>
+            <PivotItem Header="Atualizar">
+                <Grid>
+                    <Button x:Name="btnAServidor" Content="Servidor" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="93" Click="btnAServidor_Click"/>
+                    <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="108,6,0,0" TextWrapping="Wrap" Text="Envia os dados do dispositivo para o servidor." VerticalAlignment="Top" Width="218" Height="40" TextAlignment="Center"/>
+                    <Button x:Name="btnADispositivo" Content="Dispositivo" HorizontalAlignment="Left" Margin="10,78,0,0" VerticalAlignment="Top" Click="btnADispositivo_Click"/>
+                    <TextBlock x:Name="textBlock1" HorizontalAlignment="Left" Margin="108,78,0,0" TextWrapping="Wrap" Text="Envia os dados do servidor para o dispositivo." VerticalAlignment="Top" Width="218" TextAlignment="Center"/>
+                </Grid>
+            </PivotItem>
+        </Pivot>
+    </Grid>
+</Page>
